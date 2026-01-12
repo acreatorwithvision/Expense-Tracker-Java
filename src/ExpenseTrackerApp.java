@@ -87,6 +87,24 @@ public class ExpenseTrackerApp{
 				System.out.println("Invalid amount. Please enter a number");
 			}
 		}
+
+		//3. Get Category 
+		System.out.println("Enter Category (e.g, Food, Transport, Rent): ");
+		String category =scanner.nextLine();
+
+		//4. Get Description
+		System.out.println("Enter Description: ");
+		String description=scanner.nextLine();
+
+		//5. Create and Add expense
+		Expense newExpense = new Expense(date, amount, category, description);
+		manager.addExpense(newExpense);
+		System.out.println("\nExpense added");
+	}
+
+	//run the main method
+	public static void main(String[] args) {
+		new ExpenseTrackerApp().run();
 	}
 	
 }

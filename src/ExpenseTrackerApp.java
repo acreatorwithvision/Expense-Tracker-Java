@@ -12,7 +12,7 @@ public class ExpenseTrackerApp{
 
 	public ExpenseTrackerApp(){
 		this.manager= new ExpenseManager();
-		this.scanner=new Scanner(Scanner.in);
+		this.scanner=new Scanner(System.in);
 	}
 
 	public void run(){
@@ -25,7 +25,7 @@ public class ExpenseTrackerApp{
 
 			switch(choice){
 				case "1":
-					addExpense();
+					addExpenses();
 					break;
 				case "2":
 					manager.viewAllExpenses();
@@ -69,7 +69,7 @@ public class ExpenseTrackerApp{
 			String dateString=scanner.nextLine();
 			try{
 				date=LocalDate.parse(dateString);
-			}catch (DateTimeParseExceptionn e){
+			}catch (DateTimeParseException e){
 				System.out.println("Invalid date format. Please use YYYY-MM-DD.");
 			}
 		}
